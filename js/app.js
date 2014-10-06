@@ -19,7 +19,7 @@ angular.module('warehouse', ['ionic', 'warehouse.controllers', 'warehouse.servic
       StatusBar.styleDefault();
     }
   });
-})
+});
 
 
 var resultDiv;
