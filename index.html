@@ -1,100 +1,59 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
-
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-    <link href="css/ionic.app.css" rel="stylesheet">
--->
-
-<!-- ionic/angularjs js -->
-<script src="lib/ionic/js/ionic.bundle.js"></script>
-
-<!-- cordova script (this will be a 404 during development) -->
-<script src="cordova.js"></script>
-
-<!-- your app's js -->
-<script src="js/app.js"></script>
-<script src="js/controllers.js"></script>
-<script src="js/services.js"></script>
+	<title>JakeKoten.com</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <style>
+    body{background:#f8f8f8}h1{padding-bottom:20px}#aboutImg{margin-left:auto;margin-right:auto}#footer nav{border-color:#f8f8f8;border-radius:0}.footer_text{margin-right:auto;margin-left:auto;width:50%}.footer_text small{text-align:center}#designed{padding-left:100px}ul li{display:inline}#main nav{border-color:#f8f8f8;border-radius:0}#menu.nav-pills a{height:110px;font-size:36px}#menu{font-family:Arial,sans-serif;font-weight:700;text-transform:uppercase;list-style-type:none;font-size:13px}#menu a{text-align:center;color:#777;text-decoration:none}#main.container nav.navbar ul#menu.nav li.active a,#menu a:hover{color:#555;background-color:#e7e7e7}#menu_wrapper ul{margin-left:12px}#menu_wrapper{padding:0 16px 0 0;background:url(http://dlw3k56aan64k.cloudfront.net/images2/grey.png) no-repeat right}#menu_wrapper div{float:left;height:44px;width:12px;background:url(http://dlw3k56aan64k.cloudfront.net/images2/grey.png) no-repeat left}.center #aboutImg{display:block;margin-left:auto;margin-right:auto}#main{background:#fff;width:900px;display:block;margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;padding-top:20px;padding-right:0;padding-bottom:0;padding-left:0}a img{border:0}.example{border:1px solid #CCC;background:#f2f2f2;padding:10px}ul{list-style-image:url(list-style.gif)}pre{font-family:"Lucida Console","Courier New",Verdana;border:1px solid #CCC;background:#f2f2f2;padding:10px}code{font-family:"Lucida Console","Courier New",Verdana;margin:0;padding:0}#gallery{padding:30px;background:#e1eef5}#descriptions{position:relative;height:50px;background:#EEE;margin-top:10px;width:640px;padding:10px;overflow:hidden}#descriptions .ad-image-description{position:absolute}#descriptions .ad-image-description .ad-description-title{display:block}
+  </style>
 </head>
-<body ng-app="warehouse">
-    <div ng-controller="FormCtrl">
-        <ion-header-bar id="header" class="bar bar-header bar-dark">
-            <h1 class="title">{{titles[pagenumber - 1]}}</h1>
-        </ion-header-bar> 
-        <ion-content>
-            <form>
-                 <div ng-show="pagenumber == 1">
+<body style="background: #f8f8f8">
+  <p> &nbsp </p>
+  <div id="main" class="container">
+    <h1 align="center"> Jake Koten's Website</h1>
+        <nav role="navigation" class="navbar navbar-default">
+      <ul id="menu" class="nav nav-pills nav-stacked hidden-lg">
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="/resume" id="about">About me</a></li>
+        <li><a href="aboutyou.html" id="aboutyou">About you</a></li>
+        <li><a href="/blog" id="websites">Blog</a></li>
+        <li><a href="contact.html" id="contact">Contact</a></li>
+        <li><a href="films.html" id="film">Films</a></li>
+        <li><a href="future.html" id="future">Future</a></li>
+        <li><a href="project.html" id="projects">Projects</a></li>
+        <li><a href="websites.html" id="websites">Websites</a></li>
+      </ul>
 
-                        <div class="list tracking-form">
-                            <div class="item item-input-inset row">
-                                <label class="item-input-wrapper col col-60">
-                                      <input type="text" placeholder="Tracking or RMA #" ng-model="tracking" name="tracking-rma">
-                                  </label>
-                                  <button class="button button-small col col-20">
-                                      Search 
-                                  </button>
-                                  <button id="startScan" class="col-20 col button button-small button-positive">
-                                     Scan Barcode
-                                  </button>
-                            </div>
-                            
-                        </div>
-                </div>
-                <div ng-show="pagenumber == 2">
-                      <div class="list tracking-form">
-                         <h2> Tracking Number: {{tracking}} </h2>
-                            <div class="item item-input-inset row">
-                                <label class="item-input-wrapper col col-80">
-                                      <input type="text" placeholder="RMA" ng-model="rma">
-                                  </label>
-                                  <button ng-click="takePicture();" class="button button-positive button-small col col-20">
-                                      Use Camera
-                                  </button>
-                            </div>
-                            <div class="item item-input-inset">
-                                <label class="item-input-wrapper">
-                                      <input type="text" placeholder="Seller Number" >
-                                  </label>
-                            </div>
-                            <div class="item item-input-inset">
-                                <label class="item-input-wrapper">
-                                      <input type="text" placeholder="Weight Lbs">
-                                  </label>
-                            </div>
-                        </div>
-                   
-                </div>
-                <div ng-show="pagenumber == 3">
-                    <h2> Tracking: {{tracking}} </h2> 
-                    <h2> RMA: {{rma}} </h2> 
-                    <h2> WH PKG ID: 4321 </h2>
-
-                </div>
-                <div ng-show="pagenumber == 4">
-                    <div class="camera-upload">
-                    <button class="icon ion-camera" ng-click="takePicture();" style="font-size: 200px;"></button>
-                    <h4> Add label snapshot</h4>
-                    <img src="" id="myImage" width="200px">
-                    </div>
-                    <button class="button button-full button-positive button-form">
-                        Done
-                    </button>
-                </div>
-            </form>
-                <div id="results">   
-                </div>
-            </ion-content>
-        <ion-footer-bar class="row">
-            <button class="button button-small col col-25" ng-hide="pagenumber == 1" ng-click="pagenumber = pagenumber - 1"> Prev </button>
-            <button class="button button-small col col-25" ng-hide="pagenumber == 4" ng-click="pagenumber = pagenumber + 1"> Next </button>
-        </ion-footer-bar>
+      
+      <ul id="menu" class="nav navbar-nav hidden-md hidden-sm hidden-xs">
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="/resume" id="about">About me</a></li>
+        <li><a href="aboutyou.html" id="aboutyou">About you</a></li>
+        <li><a href="/blog" id="websites">Blog</a></li>
+        <li><a href="contact.html" id="contact">Contact</a></li>
+        <li><a href="films.html" id="film">Films</a></li>
+        <li><a href="future.html" id="future">Future</a></li>
+        <li><a href="project.html" id="projects">Projects</a></li>
+        <li><a href="websites.html" id="websites">Websites</a></li>
+      </ul>
+      
+    </nav>
+    <div id="go-here">
+   <img src="http://dlw3k56aan64k.cloudfront.net/images2/intro.gif" alt="arrow" id="aboutImg" class="img-responsive" alt="Responsive image"/>
+    <p align="center" class="hidden-xs hidden-sm hidden-md">*the above animations may only be hilarious. If the condition persists please consult your doctor.<p>
+      <p>&nbsp;</p>
     </div>
-</body>
-</html>
+    <nav id="footer" class="navbar navbar-default"></nav> 
+    <div class="footer_text">
+    <small id="designed"> Designed and built by Jake Koten</small> 
+    <br>
+    <small>Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</small>
+    <br>
+    <br>
+    </div>
+    </div>
+  </body>
+    <script type="text/javascript" src="js/script_min.js"></script>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="js/custom.js"></script>
+  </html>
